@@ -1,6 +1,6 @@
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
+-- on fresh install run 
+-- git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
--- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
@@ -47,15 +47,12 @@ return require('packer').startup(function(use)
         }
     }
 
-    -- start for flutter
---    use("nvim-lua/plenary.nvim")
---
---    use {
---        'akinsho/flutter-tools.nvim',
---        requires = {
---            'nvim-lua/plenary.nvim',
---            'stevearc/dressing.nvim', -- optional for vim.ui.select
---        },
---    }
-    -- end for flutter
+    use({
+        "L3MON4D3/LuaSnip",
+        -- follow latest release.
+        tag = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+        -- install jsregexp (optional!:).
+        run = "make install_jsregexp"
+    })
+
 end)

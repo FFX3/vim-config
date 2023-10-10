@@ -8,6 +8,7 @@ lsp.nvim_workspace()
 lsp.ensure_installed({
   'tsserver',
   'rust_analyzer',
+  'lua_ls'
 })
 
 local cmp = require('cmp')
