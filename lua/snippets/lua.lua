@@ -37,13 +37,17 @@ ls.add_snippets("lua", {
         ls.text_node({ "", "end" }),
     }),
 
-    ls.snippet("req", fmt("local {} = require('{}')", {
-        f((function(args)
-            local parts = vim.split(args[1][1], ".")
-            return parts[#parts] or ""
-        end), { 1 }),
-        i(1),
-    })),
+    ls.snippet("req",
+        fmt("local {} = require('{}')", {
+            f(function(args)
+                print(vim.inspect(args))
+                local parts = vim.split(args[1][1], ".", true)
+                print(vim.inspect(parts))
+                return parts[#parts] or ""
+            end, { 1 }),
+            i(1),
+        })
+    ),
 
     s('req_reload', fmt([[
             package.loaded['{}'] = nil
