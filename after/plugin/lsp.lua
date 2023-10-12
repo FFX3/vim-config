@@ -7,6 +7,7 @@ lsp.nvim_workspace()
 
 lsp.ensure_installed({
   'tsserver',
+  'denols',
   'rust_analyzer',
   'lua_ls'
 })

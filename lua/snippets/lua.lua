@@ -33,20 +33,20 @@ ls.add_snippets("lua", {
         ls.text_node(" = function("),
         ls.insert_node(2),
         ls.text_node({ ")", "    " }),
-        ls.insert_node(3),
+        ls.insert_node(0),
         ls.text_node({ "", "end" }),
     }),
 
     ls.snippet("req", fmt("local {} = require('{}')", {
-        ls.insert_node(1, "default"),
+        ls.insert_node(1, "module"),
         rep(1)
     })),
 
     s('req_reload', fmt([[
             package.loaded['{}'] = nil
             require('{}')
-        ]], 
-        { rep(1), i(1) }
+        ]],
+        { rep(0), i(0) }
     )),
 
     s('luasnip', fmt([[
@@ -77,6 +77,17 @@ ls.add_snippets("lua", {
         local parse = require("luasnip.util.parser").parse_snippet
         local ms = ls.multi_snippet
         local k = require("luasnip.nodes.key_indexer").new_key
-    ]], {}))
 
-}, { key = '1' })
+
+        ls.add_snippets('<>', {
+            <>
+        }, { key = '<>' }) 
+    ]], {
+        i(1),
+        i(0),
+        rep(1)
+    } , {
+        delimiters = "<>"
+    })),
+
+}, { key = 'lua' })
