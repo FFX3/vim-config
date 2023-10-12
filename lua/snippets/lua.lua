@@ -38,15 +38,18 @@ ls.add_snippets("lua", {
     }),
 
     ls.snippet("req", fmt("local {} = require('{}')", {
-        ls.insert_node(1, "module"),
-        rep(1)
+        f((function(args)
+            local parts = vim.split(args[1][1], ".")
+            return parts[#parts] or ""
+        end), { 1 }),
+        i(1),
     })),
 
     s('req_reload', fmt([[
             package.loaded['{}'] = nil
             require('{}')
         ]],
-        { rep(0), i(0) }
+        { rep(1), i(1) }
     )),
 
     s('luasnip', fmt([[

@@ -26,7 +26,7 @@ vim.keymap.set({ "i", "s" }, "<A-j>", function()
     end
 end, { silent = false })
 
-vim.keymap.set({ "i", "s" }, "<A-i>", function()
+vim.keymap.set({ "i", "s" }, "<A-k>", function()
     if ls.expand_or_jumpable() then
         ls.jump(-1)
     end
