@@ -1,0 +1,40 @@
+--vim.api.nvim_create_augroup("blogging", {clear = true})
+--vim.api.nvim_create_autocmd({"BufWinEnter"}, {
+--    group = "blogging",
+--    pattern = {"*.md"},
+--    callback = function ()
+--        vim.cmd("Goyo")
+--    end,
+--})
+--
+--vim.api.nvim_create_autocmd({"BufWinLeave", "BufLeave"}, {
+--    group = "blogging",
+--    pattern = {"*.md"},
+--    callback = function ()
+--        vim.cmd("Goyo!")
+--    end,
+--})
+---- Enable the relative number when going into `GOYO` mode!
+--function Goyo_enter()
+--    -- Enable hybird number (Absoluate and relative number)
+--    vim.wo.number = true
+--    vim.wo.relativenumber = true
+--
+--    vim.cmd("Limelight")
+--end
+--
+--function Goyo_leave()
+--
+--        vim.cmd("Limelight!")
+--end
+--
+--
+--vim.cmd([[
+--    autocmd! User GoyoEnter :call luaeval('Goyo_enter()')
+--    autocmd! User GoyoLeave :call luaeval('Goyo_leave()')
+--]])
+--
+--vim.keymap.set("n", "<leader>pv", function()
+--    vim.cmd("Goyo!")
+--    vim.cmd.Ex()
+--end)

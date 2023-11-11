@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/justinm/.cache/nvim/packer_hererocks/2.1.1694285958/share/lua/5.1/?.lua;/home/justinm/.cache/nvim/packer_hererocks/2.1.1694285958/share/lua/5.1/?/init.lua;/home/justinm/.cache/nvim/packer_hererocks/2.1.1694285958/lib/luarocks/rocks-5.1/?.lua;/home/justinm/.cache/nvim/packer_hererocks/2.1.1694285958/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/justinm/.cache/nvim/packer_hererocks/2.1.1694285958/lib/lua/5.1/?.so"
+local package_path_str = "/home/justinm/.cache/nvim/packer_hererocks/2.1.1697887905/share/lua/5.1/?.lua;/home/justinm/.cache/nvim/packer_hererocks/2.1.1697887905/share/lua/5.1/?/init.lua;/home/justinm/.cache/nvim/packer_hererocks/2.1.1697887905/lib/luarocks/rocks-5.1/?.lua;/home/justinm/.cache/nvim/packer_hererocks/2.1.1697887905/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/justinm/.cache/nvim/packer_hererocks/2.1.1697887905/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -84,10 +84,20 @@ _G.packer_plugins = {
     path = "/home/justinm/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
+  ["goyo.vim"] = {
+    loaded = true,
+    path = "/home/justinm/.local/share/nvim/site/pack/packer/start/goyo.vim",
+    url = "https://github.com/junegunn/goyo.vim"
+  },
   harpoon = {
     loaded = true,
     path = "/home/justinm/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/theprimeagen/harpoon"
+  },
+  ["limelight.vim"] = {
+    loaded = true,
+    path = "/home/justinm/.local/share/nvim/site/pack/packer/start/limelight.vim",
+    url = "https://github.com/junegunn/limelight.vim"
   },
   ["lsp-zero.nvim"] = {
     loaded = true,
@@ -119,6 +129,11 @@ _G.packer_plugins = {
     path = "/home/justinm/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ["obsidian.nvim"] = {
+    loaded = true,
+    path = "/home/justinm/.local/share/nvim/site/pack/packer/start/obsidian.nvim",
+    url = "https://github.com/epwalsh/obsidian.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/justinm/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -149,14 +164,29 @@ _G.packer_plugins = {
     path = "/home/justinm/.local/share/nvim/site/pack/packer/start/undotree",
     url = "https://github.com/mbbill/undotree"
   },
+  ["vim-blade"] = {
+    loaded = true,
+    path = "/home/justinm/.local/share/nvim/site/pack/packer/start/vim-blade",
+    url = "https://github.com/jwalton512/vim-blade"
+  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/home/justinm/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
+  },
+  vimwiki = {
+    config = { "\27LJ\2\n∞\1\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0ê\1            let g:vimwiki_list = [{'path': '~/Notes/second-brain',\n                      \\ 'syntax': 'markdown', 'ext': 'md'}]\n            \bcmd\bvim\0" },
+    loaded = true,
+    path = "/home/justinm/.local/share/nvim/site/pack/packer/start/vimwiki",
+    url = "https://github.com/vimwiki/vimwiki"
   }
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: vimwiki
+time([[Config for vimwiki]], true)
+try_loadstring("\27LJ\2\n∞\1\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0ê\1            let g:vimwiki_list = [{'path': '~/Notes/second-brain',\n                      \\ 'syntax': 'markdown', 'ext': 'md'}]\n            \bcmd\bvim\0", "config", "vimwiki")
+time([[Config for vimwiki]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

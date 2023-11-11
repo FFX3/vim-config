@@ -9,3 +9,4 @@ require('snippets.rust')
 
 package.loaded['snippets.react'] = nil
 require('snippets.react')
+

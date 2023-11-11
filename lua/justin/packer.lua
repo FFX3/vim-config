@@ -50,9 +50,36 @@ return require('packer').startup(function(use)
     use({
         "L3MON4D3/LuaSnip",
         -- follow latest release.
-        tag = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+        tag = "v2.*", -- Replace <CurrentMajor> by the latest released major
+        --(first number of latest release)
         -- install jsregexp (optional!:).
         run = "make install_jsregexp"
     })
+
+    use('jwalton512/vim-blade')
+
+    use('junegunn/goyo.vim')
+    use('junegunn/limelight.vim')
+    use{
+        'vimwiki/vimwiki',
+        config = function()
+            vim.cmd([[
+            let g:vimwiki_list = [{'path': '~/Notes/second-brain',
+                      \ 'syntax': 'markdown', 'ext': 'md'}]
+            ]])
+        end
+    }
+
+    use "nvim-lua/plenary.nvim"
+
+    use {
+        "epwalsh/obsidian.nvim",
+        requires = {
+            "nvim-lua/plenary.nvim", -- Required
+            'hrsh7th/nvim-cmp',
+            'nvim-telescope/telescope.nvim'
+        },
+    }
+
 
 end)
