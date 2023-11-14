@@ -38,13 +38,14 @@ vim.keymap.set({ "i" }, "<A-l>", function()
     end
 end)
 
-vim.keymap.set("n", "<leader><leader>s", "<cmd>source ~/.config/nvim/after/plugin/luasnip.lua<CR>")
+vim.keymap.set("n", "<leader><leader>s", function()
+    print('realoading snippets')
+    vim.cmd [[source ~/.config/nvim/after/plugin/luasnip.lua]]
+end)
 
 ls.add_snippets("all", {
     ls.snippet("expand", ls.text_node("-- this is what was expanded!")),
 })
-
-print('realoading snippets')
 
 package.loaded['snippets'] = nil
 require('snippets')
