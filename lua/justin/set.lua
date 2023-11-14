@@ -35,3 +35,6 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "80"
 
 vim.g.mapleader = " "
+
+-- I can't get "+y to work
+vim.cmd[[ set clipboard+=unnamedplus ]]
