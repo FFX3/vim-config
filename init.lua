@@ -1,2 +1,2 @@
-require("colmakdh")
+require("langmaps")
 require("justin")

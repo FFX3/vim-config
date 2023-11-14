@@ -16,15 +16,23 @@ lsp.ensure_installed({
 local cmp = require('cmp')
 
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
-local cmp_mappings = lsp.defaults.cmp_mappings({
-  ['<C-k>'] = cmp.mapping.select_prev_item(cmp_select),
-  ['<C-j>'] = cmp.mapping.select_next_item(cmp_select),
-  ['<C-l>'] = cmp.mapping.confirm({ select = true }),
-  ["<C-Space>"] = cmp.mapping.complete(),
-})
+
+
+local cmp_lang_maps = {
+    [QWERTY] = lsp.defaults.cmp_mappings({
+        ['<C-k>'] = cmp.mapping.select_prev_item(cmp_select),
+        ['<C-j>'] = cmp.mapping.select_next_item(cmp_select),
+        ['<C-o>'] = cmp.mapping.confirm({ select = true }),
+    }),
+    [COLMAKDH] = lsp.defaults.cmp_mappings({
+        ['<C-e>'] = cmp.mapping.select_prev_item(cmp_select),
+        ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+        ["<C-y>"] = cmp.mapping.confirm({ select = true }),
+    }),
+}
 
 lsp.setup_nvim_cmp({
-	mapping = cmp_mappings
+	mapping = cmp_lang_maps[LANGMAP_SETTING]
 })
 
 lsp.set_preferences({
