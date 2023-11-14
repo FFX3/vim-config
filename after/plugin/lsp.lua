@@ -31,6 +31,7 @@ local cmp_lang_maps = {
     }),
 }
 
+
 lsp.setup_nvim_cmp({
 	mapping = cmp_lang_maps[LANGMAP_SETTING]
 })

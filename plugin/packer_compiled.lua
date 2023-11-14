@@ -174,6 +174,11 @@ _G.packer_plugins = {
     path = "/home/justinm/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
+  ["vim-tmux-navigator"] = {
+    loaded = true,
+    path = "/home/justinm/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
+    url = "https://github.com/christoomey/vim-tmux-navigator"
+  },
   vimwiki = {
     config = { "\27LJ\2\n∞\1\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0ê\1            let g:vimwiki_list = [{'path': '~/Notes/second-brain',\n                      \\ 'syntax': 'markdown', 'ext': 'md'}]\n            \bcmd\bvim\0" },
     loaded = true,
